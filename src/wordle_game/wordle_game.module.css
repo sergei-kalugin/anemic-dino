@@ -1,0 +1,23 @@
+.wordleGame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  gap: 10px;
+}
+
+.mainContainer {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  border-bottom: 1px solid var(--border-low);
+  width: 100%;
+  margin: 8px 0px;
+}
