@@ -53,6 +53,8 @@ export type RootState = {
 };
 
 export const MAX_SUGGESTED_WORDS = 10;
+export const MAX_5LETTERS_ATTEMPTS = 8;
+export const MAX_6LETTERS_ATTEMPTS = 10;
 
 export const createInitWord = (wordLength: number): WordLine => ({
   word: new Array(wordLength).fill({ letter: undefined, status: "input" }),
@@ -105,7 +107,7 @@ const createInitWordle = (
 ): Wordle => {
   const wordLen = getWordLength(gameMode);
   return {
-    wordLines: Array(6)
+    wordLines: Array(wordLen === 5 ? MAX_5LETTERS_ATTEMPTS : MAX_6LETTERS_ATTEMPTS)
       .fill(null)
       .map((_) => createInitWord(wordLen)),
     currentInputLine: 0,
@@ -131,7 +133,8 @@ export const createInitialState = (): RootState => {
   const storedGameMode: GameMode | null = LocalStorage.getItem(
     "gameMode"
   ) as GameMode;
-  const gameMode = storedGameMode ?? "6letters";
+  // const gameMode = storedGameMode ?? "6letters";
+  const gameMode = "5letters";
   LocalStorage.setItem("gameMode", gameMode);
 
   // Persisted game state
