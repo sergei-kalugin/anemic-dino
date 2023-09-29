@@ -20,7 +20,7 @@ export const Header = () => {
           ?
         </button>
         {/*<h1>{gameMode === "6letters" ? "Wordle 6" : "Wordle Clone"}</h1>*/}
-        <h1>WORDLE</h1>
+        <h1>HAPPY FRIDAY, MADS!</h1>
         <div className={styles.endButtonsContainer}>
           {gameState !== "inprogress" && (
             <button

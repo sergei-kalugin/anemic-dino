@@ -84,16 +84,18 @@ const getDailySolution = (mode: GameMode) => {
   );
   return {
     // solution: solutionList[diffDays % solutionList.length],
-    solution: 'decade',
+    solution: 'natal',
     day: diffDays,
   };
 };
 
 export const getWordLength = (gameMode: GameMode) => {
-  if (gameMode === "5letters") {
-    return 5;
-  }
-  return 6;
+  return 5;
+
+  // if (gameMode === "5letters") {
+  //   return 5;
+  // }
+  // return 6;
 };
 
 const createInitWordle = (
