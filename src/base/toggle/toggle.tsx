@@ -9,7 +9,7 @@ export const Toggle = ({
   toggled?: boolean;
 }) => {
   const handleChange = React.useCallback(
-    (e) => {
+    (e: React.ChangeEvent<HTMLInputElement>) => {
       onToggle(e.target.checked);
     },
     [onToggle]
